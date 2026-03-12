@@ -7,12 +7,10 @@ const jobs = [
     company: "Uber9 Business Process Pvt Ltd",
     period: "2021 – Present",
     items: [
-      "Led end-to-end QA for Libra Legal Case Management system",
-      "Tested Z360 customer application and CRM systems",
+      "Led end-to-end software quality assurance processes",
       "Designed automation framework using Selenium, Java, and TestNG",
       "Integrated automation with Jenkins CI/CD",
-      "Validated GST filing workflows",
-      "Tested AI chat solutions (Kommunicate & Zenius AI)",
+      "Validated complex workflows including GST filing",
       "Conducted functional, regression, API, and UAT testing",
     ],
   },
@@ -20,7 +18,6 @@ const jobs = [
     title: "Software Test Engineer",
     company: "Telliant Systems India Pvt Ltd",
     period: "2017 – 2021",
-    project: "Aspen Dental",
     items: [
       "Created detailed test plans and test cases",
       "Participated in Agile sprint planning and meetings",
@@ -32,11 +29,10 @@ const jobs = [
     title: "Junior Test Engineer",
     company: "Telliant Systems India Pvt Ltd",
     period: "2014 – 2017",
-    project: "Total Dental (EHR System)",
     items: [
-      "Developed 500+ test cases covering 90% of features",
+      "Developed and executed comprehensive test cases",
       "Performed functional, integration, and system testing",
-      "Worked with regulatory compliance modules including ICD-9 to ICD-10 and claims processing",
+      "Worked with regulatory compliance modules",
     ],
   },
 ];
@@ -79,11 +75,6 @@ const ExperienceSection = () => (
                       <Building2 size={14} />
                       <span>{job.company}</span>
                     </div>
-                    {job.project && (
-                      <p className="text-sm text-primary font-medium mt-1">
-                        Project: {job.project}
-                      </p>
-                    )}
                   </div>
                   <span className="inline-flex items-center gap-1.5 text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full">
                     <Calendar size={14} /> {job.period}

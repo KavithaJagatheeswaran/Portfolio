@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowDown, Briefcase } from "lucide-react";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -33,13 +33,14 @@ const HeroSection = () => (
             href="#experience"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
           >
-            View Projects <ArrowDown size={18} />
+            View Experience <ArrowDown size={18} />
           </a>
           <a
-            href="#contact"
+            href="https://drive.google.com/file/d/1Jq2auU98sjIRT_qkedzaWoV35RL5NLFV/view?usp=sharing"
+            target="_blank"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border bg-card text-foreground font-semibold hover:bg-accent transition-colors"
           >
-            Contact Me <Mail size={18} />
+            Hire Me <Briefcase size={18} />
           </a>
         </div>
       </motion.div>
