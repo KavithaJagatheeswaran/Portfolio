@@ -46,7 +46,7 @@ const AboutSection = () => {
             <div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="grid md:grid-cols-3 gap-4 mb-6">
 
                 {stats.map((s, index) => (
                   <motion.div
