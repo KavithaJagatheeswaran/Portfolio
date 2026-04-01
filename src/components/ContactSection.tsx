@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Linkedin, Send } from "lucide-react";
 import { toast } from "sonner";
+import emailjs from "emailjs-com";
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "jagathekavitha@gmail.com", href: "mailto:jagathekavitha@gmail.com" },
@@ -12,6 +13,7 @@ const contactInfo = [
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,8 +21,32 @@ const ContactSection = () => {
       toast.error("Please fill in all fields");
       return;
     }
-    toast.success("Message sent! I'll get back to you soon.");
-    setForm({ name: "", email: "", message: "" });
+
+    setIsSubmitting(true);
+
+    const serviceId = "service_37g77pz";
+    const templateId = "template_dw4033m";
+    const userId = "0fviFU1JrI5kJBdbK";
+
+    const templateParams = {
+      from_name: form.name,
+      from_email: form.email,
+      message: form.message,
+      to_email: "jagathekavitha@gmail.com",
+    };
+
+    emailjs.send(serviceId, templateId, templateParams, userId)
+      .then((response) => {
+        toast.success("Message sent! I'll get back to you soon.");
+        setForm({ name: "", email: "", message: "" });
+      })
+      .catch((error) => {
+        toast.error("Failed to send message. Please try again later.");
+        console.error("EmailJS Error:", error);
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -99,9 +125,10 @@ const ContactSection = () => {
             />
             <button
               type="submit"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
+              disabled={isSubmitting}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message <Send size={18} />
+              {isSubmitting ? "Sending..." : "Send Message"} <Send size={18} />
             </button>
           </motion.form>
         </div>
