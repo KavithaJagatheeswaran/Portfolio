@@ -37,15 +37,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm"
+        : "bg-transparent"
+        }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <a href="#" className="text-xl font-bold gradient-text">
-          Kavitha J
+        <a href="#" className="flex items-center gap-3">
+          <span className="text-2xl font-bold gradient-text tracking-tight">Kavitha J</span>
         </a>
 
         {/* Desktop */}

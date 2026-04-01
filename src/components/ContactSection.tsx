@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import emailjs from "emailjs-com";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "jagathekavitha@gmail.com", href: "mailto:jagathekavitha@gmail.com" },
+  { icon: Mail, label: "Email", value: "jagathekavith@gmail.com", href: "mailto:jagathekavitha@gmail.com" },
   { icon: Phone, label: "Phone", value: "+91 9962079095", href: "tel:+919962079095" },
   { icon: MapPin, label: "Location", value: "Chennai, India", href: "#" },
   { icon: Linkedin, label: "LinkedIn", value: "Kavitha J", href: "https://linkedin.com/in/kavitha-jagatheeswaran-084017120" },
