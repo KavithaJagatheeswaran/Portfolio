@@ -29,8 +29,8 @@ const ContactSection = () => {
     const userId = "0fviFU1JrI5kJBdbK";
 
     const templateParams = {
-      from_name: form.name,
-      from_email: form.email,
+      name: form.name,
+      email: form.email,
       message: form.message,
       to_email: "jagathekavitha@gmail.com",
     };
